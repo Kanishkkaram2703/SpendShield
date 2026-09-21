@@ -1,0 +1,28 @@
+step1
+in wsl ubuntu terminal
+~/Cassandra/bin/cassandra -f
+
+to stop in new wsl ubantu terminal
+~/Cassandra/bin/nodetool stopdaemon
+
+step 2
+in powershell or terminal
+mongod --dbpath "D:\E_Drive\Project\.mongodb-rs-validation" --port 27018 --replSet rs0 --bind_ip 127.0.0.1
+
+to stop ctrl + c
+
+step3 
+in powershell or terminal with backend folder location
+cd D:\E_Drive\Project\backend
+.\.venv\Scripts\Activate.ps1
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+to stop ctrl + c
+
+step 4
+in powershell or terminal with mobile folder
+cd mobile
+npm install
+npx expo start
+
+to stop ctrl + c

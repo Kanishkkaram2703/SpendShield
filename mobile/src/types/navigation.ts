@@ -1,0 +1,24 @@
+export type RootStackParamList = {
+  Splash: undefined;
+  Welcome: undefined;
+  Login: { email?: string; registered?: boolean } | undefined;
+  Register: undefined;
+  Dashboard: undefined;
+  Pay: undefined;
+  Transactions: undefined;
+  TransactionDetails: { transactionId: string };
+  AccountDetails: { accountId?: string } | undefined;
+  ComingSoonPayment: { flow: 'send' | 'qr' | 'bank' | 'self' };
+  Contacts: undefined;
+  PhonePayment: { phoneNumber?: string } | undefined;
+  Bills: undefined;
+  Recharge: undefined;
+  Subscriptions: undefined;
+  More: undefined;
+  DemoMerchantQr: undefined;
+  DemoSecurity: undefined;
+  Profile: undefined;
+  DemoCard: undefined;
+  Notifications: undefined;
+  AccountOperation: { operation: 'deposit' | 'withdrawal' };
+};
