@@ -1,0 +1,101 @@
+{
+  "amount": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "amount",
+    "type": "numeric"
+  },
+  "currency": {
+    "allowed": true,
+    "categories_fit_on_train": [
+      "INR",
+      "__unknown"
+    ],
+    "encoding": "one_hot_fit_on_train_with_unknown_bucket",
+    "source_field": "currency",
+    "type": "categorical"
+  },
+  "day_of_week": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "day_of_week",
+    "type": "numeric"
+  },
+  "merchant_category": {
+    "allowed": true,
+    "categories_fit_on_train": [
+      "__unknown",
+      "bills",
+      "education",
+      "entertainment",
+      "food",
+      "grocery",
+      "healthcare",
+      "home",
+      "other",
+      "shopping",
+      "subscriptions",
+      "transport",
+      "travel"
+    ],
+    "encoding": "one_hot_fit_on_train_with_unknown_bucket",
+    "source_field": "merchant_category",
+    "type": "categorical"
+  },
+  "time_since_previous_transaction_seconds": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "time_since_previous_transaction_seconds",
+    "type": "numeric"
+  },
+  "time_since_previous_transaction_seconds__missing": {
+    "allowed": true,
+    "reason": "Makes the documented first-transaction missingness explicit.",
+    "source_field": "time_since_previous_transaction_seconds",
+    "type": "numeric_indicator"
+  },
+  "transaction_channel": {
+    "allowed": true,
+    "categories_fit_on_train": [
+      "BANK_SIMULATED",
+      "CARD_SIMULATED",
+      "QR_SIMULATED",
+      "WALLET_SIMULATED",
+      "__unknown"
+    ],
+    "encoding": "one_hot_fit_on_train_with_unknown_bucket",
+    "source_field": "transaction_channel",
+    "type": "categorical"
+  },
+  "transaction_hour": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "transaction_hour",
+    "type": "numeric"
+  },
+  "user_historical_average_amount_before": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "user_historical_average_amount_before",
+    "type": "numeric"
+  },
+  "user_historical_category_frequency_before": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "user_historical_category_frequency_before",
+    "type": "numeric"
+  },
+  "user_historical_transaction_count_before": {
+    "allowed": true,
+    "missing_value_policy": "Training median; first-user-row historical average uses source fallback 0.00.",
+    "reason": "Available at prediction time; historical fields are prior-only.",
+    "source_field": "user_historical_transaction_count_before",
+    "type": "numeric"
+  }
+}

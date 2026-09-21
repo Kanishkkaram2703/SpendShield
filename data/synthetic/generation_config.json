@@ -1,0 +1,22 @@
+{
+  "currency": "INR",
+  "dataset_version": "v1",
+  "duration_days": 90,
+  "end_timestamp_exclusive": "2024-03-31T00:00:00Z",
+  "generator_version": "1.0.0",
+  "merchant_count": 100,
+  "scenario_counts": {
+    "normal": 7600,
+    "synthetic_behavior_deviation": 300,
+    "synthetic_combined_pattern": 100,
+    "synthetic_high_amount": 800,
+    "synthetic_rapid_repeat": 600,
+    "synthetic_unusual_time": 600
+  },
+  "seed": 20260912,
+  "start_date": "2024-01-01T00:00:00+00:00",
+  "start_timestamp": "2024-01-01T00:00:00Z",
+  "total_transactions": 10000,
+  "transactions_per_user": 20,
+  "user_count": 500
+}

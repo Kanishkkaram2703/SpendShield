@@ -1,0 +1,7 @@
+class,precision,recall,f1,support
+normal,0.891736,0.95318,0.921435,1132
+synthetic_behavior_deviation,0.210526,0.222222,0.216216,36
+synthetic_combined_pattern,0.4375,0.368421,0.4,19
+synthetic_high_amount,0.738739,0.719298,0.728889,114
+synthetic_rapid_repeat,1.0,1.0,1.0,52
+synthetic_unusual_time,0.967742,0.285714,0.441176,105

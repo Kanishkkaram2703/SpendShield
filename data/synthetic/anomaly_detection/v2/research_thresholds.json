@@ -1,0 +1,20 @@
+{
+  "not_a_decision_threshold": true,
+  "score_space": "normalized anomaly_score",
+  "selection_policy": "Fixed percentiles of train anomaly scores; no validation/test labels used.",
+  "synthetic_label_evaluation_only": true,
+  "thresholds": {
+    "train_p90": {
+      "percentile_of_train_scores": 90,
+      "value": 0.518579
+    },
+    "train_p95": {
+      "percentile_of_train_scores": 95,
+      "value": 0.740225
+    },
+    "train_p99": {
+      "percentile_of_train_scores": 99,
+      "value": 0.787968
+    }
+  }
+}

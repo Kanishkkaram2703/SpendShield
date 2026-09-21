@@ -1,0 +1,33 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python environments and caches
+.venv/
+venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.mongodb-rs-validation/
+
+# Build and coverage output
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# Local evidence/model output
+storage/
+model_artifacts/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1034 @@
+{
+  "artifact_version": "1.0.0",
+  "created_at_utc": "2026-09-12T17:23:33Z",
+  "dataset": {
+    "feature_version": "1.1.0",
+    "random_seed": 20260913,
+    "split_counts": {
+      "test": 1198,
+      "train": 7328,
+      "validation": 1474
+    },
+    "version": "v2"
+  },
+  "evaluation": {
+    "test": {
+      "raw_score_distribution": {
+        "count": 1198,
+        "maximum": 2.355839,
+        "mean": 0.706631,
+        "median": 0.653028,
+        "minimum": 0.27735,
+        "p95": 1.245022,
+        "p99": 1.710663
+      },
+      "research_threshold_evaluation": {
+        "train_p90": {
+          "flagged_count": 31,
+          "flagged_rate": 0.025876,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 11,
+          "normal_flagged_rate_against_normal": 0.012658,
+          "per_scenario": {
+            "normal": {
+              "flagged": 11,
+              "recall": 0.012658,
+              "total": 869
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 5,
+              "recall": 0.1,
+              "total": 50
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 3,
+              "recall": 0.125,
+              "total": 24
+            },
+            "synthetic_high_amount": {
+              "flagged": 8,
+              "recall": 0.068966,
+              "total": 116
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 1,
+              "recall": 0.020833,
+              "total": 48
+            },
+            "synthetic_unusual_time": {
+              "flagged": 3,
+              "recall": 0.032967,
+              "total": 91
+            }
+          },
+          "synthetic_flagged_count": 20,
+          "synthetic_only_precision_style": 0.645161,
+          "synthetic_only_recall_style": 0.06079,
+          "threshold": 0.518579
+        },
+        "train_p95": {
+          "flagged_count": 2,
+          "flagged_rate": 0.001669,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 0,
+          "normal_flagged_rate_against_normal": 0.0,
+          "per_scenario": {
+            "normal": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 869
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 50
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 24
+            },
+            "synthetic_high_amount": {
+              "flagged": 2,
+              "recall": 0.017241,
+              "total": 116
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 48
+            },
+            "synthetic_unusual_time": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 91
+            }
+          },
+          "synthetic_flagged_count": 2,
+          "synthetic_only_precision_style": 1.0,
+          "synthetic_only_recall_style": 0.006079,
+          "threshold": 0.740225
+        },
+        "train_p99": {
+          "flagged_count": 1,
+          "flagged_rate": 0.000835,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 0,
+          "normal_flagged_rate_against_normal": 0.0,
+          "per_scenario": {
+            "normal": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 869
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 50
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 24
+            },
+            "synthetic_high_amount": {
+              "flagged": 1,
+              "recall": 0.008621,
+              "total": 116
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 48
+            },
+            "synthetic_unusual_time": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 91
+            }
+          },
+          "synthetic_flagged_count": 1,
+          "synthetic_only_precision_style": 1.0,
+          "synthetic_only_recall_style": 0.00304,
+          "threshold": 0.787968
+        }
+      },
+      "row_count": 1198,
+      "score_distribution": {
+        "count": 1198,
+        "maximum": 0.877492,
+        "mean": 0.237656,
+        "median": 0.216859,
+        "minimum": 0.071109,
+        "p95": 0.446533,
+        "p99": 0.627186
+      },
+      "score_distribution_by_synthetic_scenario": {
+        "normal": {
+          "count": 869,
+          "maximum": 0.676601,
+          "mean": 0.228836,
+          "median": 0.214057,
+          "minimum": 0.084381,
+          "p95": 0.393731,
+          "p99": 0.534613
+        },
+        "synthetic_behavior_deviation": {
+          "count": 50,
+          "maximum": 0.730398,
+          "mean": 0.2843,
+          "median": 0.233699,
+          "minimum": 0.114895,
+          "p95": 0.577298,
+          "p99": 0.685888
+        },
+        "synthetic_combined_pattern": {
+          "count": 24,
+          "maximum": 0.700307,
+          "mean": 0.282236,
+          "median": 0.214285,
+          "minimum": 0.122428,
+          "p95": 0.616847,
+          "p99": 0.683419
+        },
+        "synthetic_high_amount": {
+          "count": 116,
+          "maximum": 0.877492,
+          "mean": 0.277643,
+          "median": 0.240489,
+          "minimum": 0.071109,
+          "p95": 0.59607,
+          "p99": 0.742687
+        },
+        "synthetic_rapid_repeat": {
+          "count": 48,
+          "maximum": 0.529682,
+          "mean": 0.232217,
+          "median": 0.221178,
+          "minimum": 0.151865,
+          "p95": 0.340911,
+          "p99": 0.518316
+        },
+        "synthetic_unusual_time": {
+          "count": 91,
+          "maximum": 0.637114,
+          "mean": 0.236386,
+          "median": 0.209023,
+          "minimum": 0.112489,
+          "p95": 0.434068,
+          "p99": 0.627532
+        }
+      },
+      "synthetic_only_ranking_metrics": {
+        "average_precision": 0.367124,
+        "limitation": "These are synthetic-label ranking analyses, not real-world detection metrics.",
+        "roc_auc": 0.553095,
+        "synthetic_label_evaluation_only": true,
+        "target_definition": "normal versus any non-normal synthetic scenario"
+      },
+      "top_k_composition": {
+        "top_10_percent": {
+          "class_composition": {
+            "normal": 0.508333,
+            "synthetic_behavior_deviation": 0.108333,
+            "synthetic_combined_pattern": 0.041667,
+            "synthetic_high_amount": 0.225,
+            "synthetic_rapid_repeat": 0.025,
+            "synthetic_unusual_time": 0.091667
+          },
+          "class_counts": {
+            "normal": 61,
+            "synthetic_behavior_deviation": 13,
+            "synthetic_combined_pattern": 5,
+            "synthetic_high_amount": 27,
+            "synthetic_rapid_repeat": 3,
+            "synthetic_unusual_time": 11
+          },
+          "fraction": 0.1,
+          "normal_class_representation": {
+            "count": 61,
+            "rate_within_top_k": 0.508333,
+            "source_rate": 0.725376
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 120
+        },
+        "top_1_percent": {
+          "class_composition": {
+            "normal": 0.25,
+            "synthetic_behavior_deviation": 0.166667,
+            "synthetic_combined_pattern": 0.083333,
+            "synthetic_high_amount": 0.416667,
+            "synthetic_rapid_repeat": 0.0,
+            "synthetic_unusual_time": 0.083333
+          },
+          "class_counts": {
+            "normal": 3,
+            "synthetic_behavior_deviation": 2,
+            "synthetic_combined_pattern": 1,
+            "synthetic_high_amount": 5,
+            "synthetic_rapid_repeat": 0,
+            "synthetic_unusual_time": 1
+          },
+          "fraction": 0.01,
+          "normal_class_representation": {
+            "count": 3,
+            "rate_within_top_k": 0.25,
+            "source_rate": 0.725376
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 4,
+            "rate": 0.8,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 12
+        },
+        "top_5_percent": {
+          "class_composition": {
+            "normal": 0.45,
+            "synthetic_behavior_deviation": 0.133333,
+            "synthetic_combined_pattern": 0.066667,
+            "synthetic_high_amount": 0.25,
+            "synthetic_rapid_repeat": 0.033333,
+            "synthetic_unusual_time": 0.066667
+          },
+          "class_counts": {
+            "normal": 27,
+            "synthetic_behavior_deviation": 8,
+            "synthetic_combined_pattern": 4,
+            "synthetic_high_amount": 15,
+            "synthetic_rapid_repeat": 2,
+            "synthetic_unusual_time": 4
+          },
+          "fraction": 0.05,
+          "normal_class_representation": {
+            "count": 27,
+            "rate_within_top_k": 0.45,
+            "source_rate": 0.725376
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 60
+        }
+      }
+    },
+    "train": {
+      "raw_score_distribution": {
+        "count": 7328,
+        "maximum": 2.671609,
+        "mean": 0.788425,
+        "median": 0.610495,
+        "minimum": 0.094062,
+        "p95": 2.002026,
+        "p99": 2.125086
+      },
+      "research_threshold_evaluation": {
+        "train_p90": {
+          "flagged_count": 733,
+          "flagged_rate": 0.100027,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 476,
+          "normal_flagged_rate_against_normal": 0.095929,
+          "per_scenario": {
+            "normal": {
+              "flagged": 476,
+              "recall": 0.095929,
+              "total": 4962
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 45,
+              "recall": 0.123626,
+              "total": 364
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 22,
+              "recall": 0.150685,
+              "total": 146
+            },
+            "synthetic_high_amount": {
+              "flagged": 113,
+              "recall": 0.157382,
+              "total": 718
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 11,
+              "recall": 0.017516,
+              "total": 628
+            },
+            "synthetic_unusual_time": {
+              "flagged": 66,
+              "recall": 0.129412,
+              "total": 510
+            }
+          },
+          "synthetic_flagged_count": 257,
+          "synthetic_only_precision_style": 0.350614,
+          "synthetic_only_recall_style": 0.108622,
+          "threshold": 0.518579
+        },
+        "train_p95": {
+          "flagged_count": 367,
+          "flagged_rate": 0.050082,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 262,
+          "normal_flagged_rate_against_normal": 0.052801,
+          "per_scenario": {
+            "normal": {
+              "flagged": 262,
+              "recall": 0.052801,
+              "total": 4962
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 19,
+              "recall": 0.052198,
+              "total": 364
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 6,
+              "recall": 0.041096,
+              "total": 146
+            },
+            "synthetic_high_amount": {
+              "flagged": 46,
+              "recall": 0.064067,
+              "total": 718
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 1,
+              "recall": 0.001592,
+              "total": 628
+            },
+            "synthetic_unusual_time": {
+              "flagged": 33,
+              "recall": 0.064706,
+              "total": 510
+            }
+          },
+          "synthetic_flagged_count": 105,
+          "synthetic_only_precision_style": 0.286104,
+          "synthetic_only_recall_style": 0.044379,
+          "threshold": 0.740225
+        },
+        "train_p99": {
+          "flagged_count": 74,
+          "flagged_rate": 0.010098,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 37,
+          "normal_flagged_rate_against_normal": 0.007457,
+          "per_scenario": {
+            "normal": {
+              "flagged": 37,
+              "recall": 0.007457,
+              "total": 4962
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 7,
+              "recall": 0.019231,
+              "total": 364
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 3,
+              "recall": 0.020548,
+              "total": 146
+            },
+            "synthetic_high_amount": {
+              "flagged": 20,
+              "recall": 0.027855,
+              "total": 718
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 1,
+              "recall": 0.001592,
+              "total": 628
+            },
+            "synthetic_unusual_time": {
+              "flagged": 6,
+              "recall": 0.011765,
+              "total": 510
+            }
+          },
+          "synthetic_flagged_count": 37,
+          "synthetic_only_precision_style": 0.5,
+          "synthetic_only_recall_style": 0.015638,
+          "threshold": 0.787968
+        }
+      },
+      "row_count": 7328,
+      "score_distribution": {
+        "count": 7328,
+        "maximum": 1.0,
+        "mean": 0.269389,
+        "median": 0.200358,
+        "minimum": 0.0,
+        "p95": 0.740225,
+        "p99": 0.787968
+      },
+      "score_distribution_by_synthetic_scenario": {
+        "normal": {
+          "count": 4962,
+          "maximum": 0.96729,
+          "mean": 0.262706,
+          "median": 0.196262,
+          "minimum": 0.016518,
+          "p95": 0.742093,
+          "p99": 0.776105
+        },
+        "synthetic_behavior_deviation": {
+          "count": 364,
+          "maximum": 0.928267,
+          "mean": 0.319945,
+          "median": 0.252628,
+          "minimum": 0.057544,
+          "p95": 0.740658,
+          "p99": 0.825573
+        },
+        "synthetic_combined_pattern": {
+          "count": 146,
+          "maximum": 0.875592,
+          "mean": 0.356638,
+          "median": 0.367728,
+          "minimum": 0.061697,
+          "p95": 0.718306,
+          "p99": 0.801369
+        },
+        "synthetic_high_amount": {
+          "count": 718,
+          "maximum": 1.0,
+          "mean": 0.312205,
+          "median": 0.237646,
+          "minimum": 0.031261,
+          "p95": 0.7568,
+          "p99": 0.881658
+        },
+        "synthetic_rapid_repeat": {
+          "count": 628,
+          "maximum": 0.801518,
+          "mean": 0.21991,
+          "median": 0.187457,
+          "minimum": 0.051359,
+          "p95": 0.453529,
+          "p99": 0.570588
+        },
+        "synthetic_unusual_time": {
+          "count": 510,
+          "maximum": 0.826395,
+          "mean": 0.274002,
+          "median": 0.191603,
+          "minimum": 0.0,
+          "p95": 0.747883,
+          "p99": 0.7921
+        }
+      },
+      "synthetic_only_ranking_metrics": {
+        "average_precision": 0.353777,
+        "limitation": "These are synthetic-label ranking analyses, not real-world detection metrics.",
+        "roc_auc": 0.543097,
+        "synthetic_label_evaluation_only": true,
+        "target_definition": "normal versus any non-normal synthetic scenario"
+      },
+      "top_k_composition": {
+        "top_10_percent": {
+          "class_composition": {
+            "normal": 0.649386,
+            "synthetic_behavior_deviation": 0.061392,
+            "synthetic_combined_pattern": 0.030014,
+            "synthetic_high_amount": 0.154161,
+            "synthetic_rapid_repeat": 0.015007,
+            "synthetic_unusual_time": 0.090041
+          },
+          "class_counts": {
+            "normal": 476,
+            "synthetic_behavior_deviation": 45,
+            "synthetic_combined_pattern": 22,
+            "synthetic_high_amount": 113,
+            "synthetic_rapid_repeat": 11,
+            "synthetic_unusual_time": 66
+          },
+          "fraction": 0.1,
+          "normal_class_representation": {
+            "count": 476,
+            "rate_within_top_k": 0.649386,
+            "source_rate": 0.677129
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 733
+        },
+        "top_1_percent": {
+          "class_composition": {
+            "normal": 0.5,
+            "synthetic_behavior_deviation": 0.094595,
+            "synthetic_combined_pattern": 0.040541,
+            "synthetic_high_amount": 0.27027,
+            "synthetic_rapid_repeat": 0.013514,
+            "synthetic_unusual_time": 0.081081
+          },
+          "class_counts": {
+            "normal": 37,
+            "synthetic_behavior_deviation": 7,
+            "synthetic_combined_pattern": 3,
+            "synthetic_high_amount": 20,
+            "synthetic_rapid_repeat": 1,
+            "synthetic_unusual_time": 6
+          },
+          "fraction": 0.01,
+          "normal_class_representation": {
+            "count": 37,
+            "rate_within_top_k": 0.5,
+            "source_rate": 0.677129
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 74
+        },
+        "top_5_percent": {
+          "class_composition": {
+            "normal": 0.713896,
+            "synthetic_behavior_deviation": 0.051771,
+            "synthetic_combined_pattern": 0.016349,
+            "synthetic_high_amount": 0.125341,
+            "synthetic_rapid_repeat": 0.002725,
+            "synthetic_unusual_time": 0.089918
+          },
+          "class_counts": {
+            "normal": 262,
+            "synthetic_behavior_deviation": 19,
+            "synthetic_combined_pattern": 6,
+            "synthetic_high_amount": 46,
+            "synthetic_rapid_repeat": 1,
+            "synthetic_unusual_time": 33
+          },
+          "fraction": 0.05,
+          "normal_class_representation": {
+            "count": 262,
+            "rate_within_top_k": 0.713896,
+            "source_rate": 0.677129
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 367
+        }
+      }
+    },
+    "validation": {
+      "raw_score_distribution": {
+        "count": 1474,
+        "maximum": 2.376591,
+        "mean": 0.699221,
+        "median": 0.63663,
+        "minimum": 0.275587,
+        "p95": 1.273728,
+        "p99": 1.603972
+      },
+      "research_threshold_evaluation": {
+        "train_p90": {
+          "flagged_count": 28,
+          "flagged_rate": 0.018996,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 11,
+          "normal_flagged_rate_against_normal": 0.011352,
+          "per_scenario": {
+            "normal": {
+              "flagged": 11,
+              "recall": 0.011352,
+              "total": 969
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 4,
+              "recall": 0.046512,
+              "total": 86
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 1,
+              "recall": 0.033333,
+              "total": 30
+            },
+            "synthetic_high_amount": {
+              "flagged": 8,
+              "recall": 0.048193,
+              "total": 166
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 4,
+              "recall": 0.032258,
+              "total": 124
+            },
+            "synthetic_unusual_time": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 99
+            }
+          },
+          "synthetic_flagged_count": 17,
+          "synthetic_only_precision_style": 0.607143,
+          "synthetic_only_recall_style": 0.033663,
+          "threshold": 0.518579
+        },
+        "train_p95": {
+          "flagged_count": 4,
+          "flagged_rate": 0.002714,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 1,
+          "normal_flagged_rate_against_normal": 0.001032,
+          "per_scenario": {
+            "normal": {
+              "flagged": 1,
+              "recall": 0.001032,
+              "total": 969
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 2,
+              "recall": 0.023256,
+              "total": 86
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 30
+            },
+            "synthetic_high_amount": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 166
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 1,
+              "recall": 0.008065,
+              "total": 124
+            },
+            "synthetic_unusual_time": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 99
+            }
+          },
+          "synthetic_flagged_count": 3,
+          "synthetic_only_precision_style": 0.75,
+          "synthetic_only_recall_style": 0.005941,
+          "threshold": 0.740225
+        },
+        "train_p99": {
+          "flagged_count": 3,
+          "flagged_rate": 0.002035,
+          "interpretation": "Synthetic-label evaluation only; not a decision threshold.",
+          "normal_flagged_count": 0,
+          "normal_flagged_rate_against_normal": 0.0,
+          "per_scenario": {
+            "normal": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 969
+            },
+            "synthetic_behavior_deviation": {
+              "flagged": 2,
+              "recall": 0.023256,
+              "total": 86
+            },
+            "synthetic_combined_pattern": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 30
+            },
+            "synthetic_high_amount": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 166
+            },
+            "synthetic_rapid_repeat": {
+              "flagged": 1,
+              "recall": 0.008065,
+              "total": 124
+            },
+            "synthetic_unusual_time": {
+              "flagged": 0,
+              "recall": 0.0,
+              "total": 99
+            }
+          },
+          "synthetic_flagged_count": 3,
+          "synthetic_only_precision_style": 1.0,
+          "synthetic_only_recall_style": 0.005941,
+          "threshold": 0.787968
+        }
+      },
+      "row_count": 1474,
+      "score_distribution": {
+        "count": 1474,
+        "maximum": 0.885543,
+        "mean": 0.234781,
+        "median": 0.210498,
+        "minimum": 0.070426,
+        "p95": 0.45767,
+        "p99": 0.585794
+      },
+      "score_distribution_by_synthetic_scenario": {
+        "normal": {
+          "count": 969,
+          "maximum": 0.740791,
+          "mean": 0.224806,
+          "median": 0.207798,
+          "minimum": 0.070426,
+          "p95": 0.434608,
+          "p99": 0.519403
+        },
+        "synthetic_behavior_deviation": {
+          "count": 86,
+          "maximum": 0.885543,
+          "mean": 0.295752,
+          "median": 0.245441,
+          "minimum": 0.105789,
+          "p95": 0.50464,
+          "p99": 0.814866
+        },
+        "synthetic_combined_pattern": {
+          "count": 30,
+          "maximum": 0.580561,
+          "mean": 0.258775,
+          "median": 0.209625,
+          "minimum": 0.084172,
+          "p95": 0.475592,
+          "p99": 0.553057
+        },
+        "synthetic_high_amount": {
+          "count": 166,
+          "maximum": 0.682482,
+          "mean": 0.275341,
+          "median": 0.240258,
+          "minimum": 0.094403,
+          "p95": 0.509729,
+          "p99": 0.655719
+        },
+        "synthetic_rapid_repeat": {
+          "count": 124,
+          "maximum": 0.81687,
+          "mean": 0.233262,
+          "median": 0.199626,
+          "minimum": 0.097076,
+          "p95": 0.450356,
+          "p99": 0.674457
+        },
+        "synthetic_unusual_time": {
+          "count": 99,
+          "maximum": 0.475606,
+          "mean": 0.206074,
+          "median": 0.188636,
+          "minimum": 0.08999,
+          "p95": 0.332624,
+          "p99": 0.473544
+        }
+      },
+      "synthetic_only_ranking_metrics": {
+        "average_precision": 0.417902,
+        "limitation": "These are synthetic-label ranking analyses, not real-world detection metrics.",
+        "roc_auc": 0.562733,
+        "synthetic_label_evaluation_only": true,
+        "target_definition": "normal versus any non-normal synthetic scenario"
+      },
+      "top_k_composition": {
+        "top_10_percent": {
+          "class_composition": {
+            "normal": 0.493243,
+            "synthetic_behavior_deviation": 0.162162,
+            "synthetic_combined_pattern": 0.040541,
+            "synthetic_high_amount": 0.195946,
+            "synthetic_rapid_repeat": 0.074324,
+            "synthetic_unusual_time": 0.033784
+          },
+          "class_counts": {
+            "normal": 73,
+            "synthetic_behavior_deviation": 24,
+            "synthetic_combined_pattern": 6,
+            "synthetic_high_amount": 29,
+            "synthetic_rapid_repeat": 11,
+            "synthetic_unusual_time": 5
+          },
+          "fraction": 0.1,
+          "normal_class_representation": {
+            "count": 73,
+            "rate_within_top_k": 0.493243,
+            "source_rate": 0.657395
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 148
+        },
+        "top_1_percent": {
+          "class_composition": {
+            "normal": 0.266667,
+            "synthetic_behavior_deviation": 0.2,
+            "synthetic_combined_pattern": 0.0,
+            "synthetic_high_amount": 0.266667,
+            "synthetic_rapid_repeat": 0.266667,
+            "synthetic_unusual_time": 0.0
+          },
+          "class_counts": {
+            "normal": 4,
+            "synthetic_behavior_deviation": 3,
+            "synthetic_combined_pattern": 0,
+            "synthetic_high_amount": 4,
+            "synthetic_rapid_repeat": 4,
+            "synthetic_unusual_time": 0
+          },
+          "fraction": 0.01,
+          "normal_class_representation": {
+            "count": 4,
+            "rate_within_top_k": 0.266667,
+            "source_rate": 0.657395
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 3,
+            "rate": 0.6,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 15
+        },
+        "top_5_percent": {
+          "class_composition": {
+            "normal": 0.472973,
+            "synthetic_behavior_deviation": 0.148649,
+            "synthetic_combined_pattern": 0.040541,
+            "synthetic_high_amount": 0.216216,
+            "synthetic_rapid_repeat": 0.081081,
+            "synthetic_unusual_time": 0.040541
+          },
+          "class_counts": {
+            "normal": 35,
+            "synthetic_behavior_deviation": 11,
+            "synthetic_combined_pattern": 3,
+            "synthetic_high_amount": 16,
+            "synthetic_rapid_repeat": 6,
+            "synthetic_unusual_time": 3
+          },
+          "fraction": 0.05,
+          "normal_class_representation": {
+            "count": 35,
+            "rate_within_top_k": 0.472973,
+            "source_rate": 0.657395
+          },
+          "synthetic_label_evaluation_only": true,
+          "synthetic_scenario_coverage": {
+            "present_non_normal_classes": 5,
+            "rate": 1.0,
+            "total_non_normal_classes": 5
+          },
+          "top_k_count": 74
+        }
+      }
+    }
+  },
+  "explainability": {
+    "method": "deterministic signal summaries from observed feature values",
+    "sample_count": 20,
+    "validation": {
+      "bounded_sample_limit": 25,
+      "deterministic_output": true,
+      "errors": [],
+      "forbidden_terms_checked": [
+        "fraud",
+        "financial crime",
+        "payment blocking",
+        "payment rejection",
+        "confirmed fraud",
+        "guaranteed fraud",
+        "automatic fraud decision"
+      ],
+      "labels_used_for_validation_only": true,
+      "rows_checked": 20,
+      "valid": true,
+      "warnings": []
+    },
+    "version": "1.0.0"
+  },
+  "leakage_review": {
+    "errors": [],
+    "feature_specs_complete": true,
+    "identifiers_absent_from_model_inputs": true,
+    "model_feature_names": [
+      "amount",
+      "transaction_hour",
+      "day_of_week",
+      "user_historical_transaction_count_before",
+      "user_historical_average_amount_before",
+      "time_since_previous_transaction_seconds",
+      "user_historical_category_frequency_before",
+      "merchant_novelty_before",
+      "channel_novelty_before",
+      "user_relative_amount_deviation",
+      "user_relative_time_deviation",
+      "time_since_previous_transaction_seconds__missing"
+    ],
+    "scenario_metadata_absent_from_model_inputs": true,
+    "target_absent_from_model_inputs": true,
+    "valid": true
+  },
+  "limitations": [
+    "Synthetic scenario labels are not real ground truth.",
+    "Synthetic patterns may be easier to rank than real behavior.",
+    "Normal and synthetic patterns overlap, so ranking is not certainty.",
+    "Thresholds are research percentiles, not decisions.",
+    "Explanations are deterministic signal summaries, not causal explanations.",
+    "The read-only backend integration is research-only and does not provide production inference or payment decisions."
+  ],
+  "model": {
+    "feature_count": 12,
+    "fit_rows": 7328,
+    "labels_used_during_fit": false,
+    "random_seed": 20260913,
+    "scenario_metadata_used_during_fit": false,
+    "type": "robust_mad_distance",
+    "version": "1.0.0"
+  },
+  "score_semantics": {
+    "anomaly_score": "raw score min-max normalized with train raw min/max and clipped to [0, 1]",
+    "comparability": "Comparable only within this dataset/model configuration; not comparable across versions without a controlled recalibration study.",
+    "direction": "higher means more anomalous",
+    "raw_score": "mean capped robust distance from train-fitted feature medians; higher means more anomalous"
+  },
+  "thresholds": {
+    "not_a_decision_threshold": true,
+    "score_space": "normalized anomaly_score",
+    "selection_policy": "Fixed percentiles of train anomaly scores; no validation/test labels used.",
+    "synthetic_label_evaluation_only": true,
+    "thresholds": {
+      "train_p90": {
+        "percentile_of_train_scores": 90,
+        "value": 0.518579
+      },
+      "train_p95": {
+        "percentile_of_train_scores": 95,
+        "value": 0.740225
+      },
+      "train_p99": {
+        "percentile_of_train_scores": 99,
+        "value": 0.787968
+      }
+    }
+  }
+}

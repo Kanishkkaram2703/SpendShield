@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "check": "current_transaction_excluded_from_history",
+      "evidence": "timestamp ascending, then synthetic_transaction_id ascending",
+      "status": "PASS"
+    },
+    {
+      "check": "historical_features_use_prior_records_only",
+      "evidence": 10000,
+      "status": "PASS"
+    },
+    {
+      "check": "deterministic_timestamp_tie_breaking",
+      "evidence": "timestamp ascending, then synthetic_transaction_id ascending",
+      "status": "PASS"
+    },
+    {
+      "check": "future_rows_do_not_enter_feature_matrix",
+      "evidence": "Independent historical feature audit passed.",
+      "status": "PASS"
+    },
+    {
+      "check": "scenario_metadata_absent_from_model_features",
+      "evidence": [],
+      "status": "PASS"
+    },
+    {
+      "check": "target_absent_from_model_features",
+      "evidence": "target_scenario_label",
+      "status": "PASS"
+    },
+    {
+      "check": "preprocessing_fit_on_training_only",
+      "evidence": "Numeric source values with train-fitted median imputation; categorical source values one-hot encoded using train categories plus an explicit unknown bucket.",
+      "status": "PASS"
+    },
+    {
+      "check": "test_rows_not_used_for_fitting",
+      "evidence": false,
+      "status": "PASS"
+    },
+    {
+      "check": "test_metrics_not_used_for_model_selection",
+      "evidence": false,
+      "status": "PASS"
+    },
+    {
+      "check": "temporal_partitions_preserved",
+      "evidence": {
+        "method": "timestamp_threshold",
+        "shuffle_before_split": false,
+        "test_fraction_of_configured_period": 0.15,
+        "train_fraction_of_configured_period": 0.7,
+        "user_history_features_use_prior_records_only": true,
+        "user_level_leakage_note": "Synthetic users may appear in multiple temporal splits; historical features use only records earlier than the current timestamp.",
+        "user_overlap_across_splits": true,
+        "validation_fraction_of_configured_period": 0.15
+      },
+      "status": "PASS"
+    }
+  ],
+  "impact_if_failed": "A failed check would invalidate the current research baseline until repaired and re-evaluated.",
+  "valid": true
+}

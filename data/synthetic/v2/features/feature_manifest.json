@@ -1,0 +1,219 @@
+{
+  "audit_columns": [
+    "synthetic_transaction_id",
+    "synthetic_user_id",
+    "timestamp",
+    "dataset_split"
+  ],
+  "candidate_source_fields": [
+    "amount",
+    "currency",
+    "transaction_hour",
+    "day_of_week",
+    "merchant_category",
+    "transaction_channel",
+    "user_historical_transaction_count_before",
+    "user_historical_average_amount_before",
+    "time_since_previous_transaction_seconds",
+    "user_historical_category_frequency_before",
+    "merchant_novelty_before",
+    "channel_novelty_before",
+    "user_relative_amount_deviation",
+    "user_relative_time_deviation"
+  ],
+  "categorical_source_fields": [
+    "currency",
+    "merchant_category",
+    "transaction_channel"
+  ],
+  "creation_timestamp_utc": "2026-09-12T15:30:37Z",
+  "dataset_type": "synthetic_research",
+  "dataset_version": "v2",
+  "derived_candidate_feature_fields": [
+    "merchant_novelty_before",
+    "channel_novelty_before",
+    "user_relative_amount_deviation",
+    "user_relative_time_deviation"
+  ],
+  "encoding": "Numeric source values with train-fitted median imputation; categorical source values one-hot encoded using train categories plus an explicit unknown bucket.",
+  "excluded_fields": [
+    "scenario_label",
+    "scenario_id",
+    "is_synthetic_scenario",
+    "label_source",
+    "label_definition",
+    "dataset_type",
+    "synthetic",
+    "source_system",
+    "dataset_version",
+    "dataset_split",
+    "scenario_injection_reason",
+    "generator_rule",
+    "future_transaction_count",
+    "future_average_amount",
+    "final_scenario_label",
+    "post_event_outcome",
+    "manually_assigned_research_label",
+    "fraud",
+    "confirmed_fraud"
+  ],
+  "feature_count": 32,
+  "feature_generation_version": "1.1.0",
+  "feature_names": [
+    "amount",
+    "transaction_hour",
+    "day_of_week",
+    "user_historical_transaction_count_before",
+    "user_historical_average_amount_before",
+    "time_since_previous_transaction_seconds",
+    "user_historical_category_frequency_before",
+    "merchant_novelty_before",
+    "channel_novelty_before",
+    "user_relative_amount_deviation",
+    "user_relative_time_deviation",
+    "time_since_previous_transaction_seconds__missing",
+    "currency__INR",
+    "currency____unknown",
+    "merchant_category____unknown",
+    "merchant_category__bills",
+    "merchant_category__education",
+    "merchant_category__entertainment",
+    "merchant_category__food",
+    "merchant_category__grocery",
+    "merchant_category__healthcare",
+    "merchant_category__home",
+    "merchant_category__other",
+    "merchant_category__shopping",
+    "merchant_category__subscriptions",
+    "merchant_category__transport",
+    "merchant_category__travel",
+    "transaction_channel__BANK_SIMULATED",
+    "transaction_channel__CARD_SIMULATED",
+    "transaction_channel__QR_SIMULATED",
+    "transaction_channel__WALLET_SIMULATED",
+    "transaction_channel____unknown"
+  ],
+  "generator_version": "1.1.0",
+  "historical_feature_audit": {
+    "errors": [],
+    "first_transaction_policy": {
+      "historical_average": "0.00 fallback",
+      "historical_count": 0,
+      "time_since_previous": "missing and imputed from training median for model input"
+    },
+    "rows_audited": 10000,
+    "tie_breaking": "timestamp ascending, then synthetic_transaction_id ascending",
+    "valid": true
+  },
+  "historical_window_definition": "All records for the same synthetic user strictly earlier under timestamp-plus-ID ordering; current record excluded.",
+  "known_limitations": [
+    "Features are derived from controlled synthetic data only.",
+    "Scenario labels are not real fraud ground truth.",
+    "The source generator can create patterns easier to detect than real behavior.",
+    "Identifiers are retained for audit but are excluded from model inputs.",
+    "No feature matrix is production-ready without independent data and governance review."
+  ],
+  "leakage_exclusions": [
+    "scenario metadata and target labels",
+    "future transaction statistics",
+    "post-event outcomes",
+    "fields derived directly from the synthetic target",
+    "identifiers and split assignment as model inputs"
+  ],
+  "missing_value_handling": {
+    "first_transaction": "Historical count is 0; historical average source fallback is 0.00; previous interval is missing and receives a training-median value plus a missingness indicator.",
+    "numeric": "Median calculated from training rows only."
+  },
+  "numeric_features": [
+    "amount",
+    "transaction_hour",
+    "day_of_week",
+    "user_historical_transaction_count_before",
+    "user_historical_average_amount_before",
+    "time_since_previous_transaction_seconds",
+    "user_historical_category_frequency_before",
+    "merchant_novelty_before",
+    "channel_novelty_before",
+    "user_relative_amount_deviation",
+    "user_relative_time_deviation",
+    "time_since_previous_transaction_seconds__missing"
+  ],
+  "output_directory": "synthetic\\v2\\features",
+  "random_seed": 20260913,
+  "reproducibility": {
+    "command": "python -m ml.feature_matrix",
+    "same_configuration_and_seed": "Produces equivalent feature rows and feature vocabulary; creation timestamp varies per run.",
+    "source_is_read_only": true
+  },
+  "source_files": {
+    "full_csv": "synthetic\\v2\\spendshield_synthetic_transactions_v2.csv",
+    "test_csv": "synthetic\\v2\\test.csv",
+    "train_csv": "synthetic\\v2\\train.csv",
+    "validation_csv": "synthetic\\v2\\validation.csv"
+  },
+  "source_row_counts": {
+    "full": 10000,
+    "test": 1198,
+    "train": 7328,
+    "validation": 1474
+  },
+  "source_validation": {
+    "account_count": 500,
+    "category_count": 12,
+    "column_count": 28,
+    "errors": [],
+    "merchant_count": 100,
+    "row_count": 10000,
+    "scenario_distribution": {
+      "normal": 6800,
+      "synthetic_behavior_deviation": 500,
+      "synthetic_combined_pattern": 200,
+      "synthetic_high_amount": 1000,
+      "synthetic_rapid_repeat": 800,
+      "synthetic_unusual_time": 700
+    },
+    "split_counts": {
+      "test": 1198,
+      "train": 7328,
+      "validation": 1474
+    },
+    "user_count": 500,
+    "valid": true
+  },
+  "split_counts": {
+    "test": 1198,
+    "train": 7328,
+    "validation": 1474
+  },
+  "split_rule": {
+    "method": "timestamp_threshold",
+    "shuffle_before_split": false,
+    "test_fraction_of_configured_period": 0.15,
+    "train_fraction_of_configured_period": 0.7,
+    "user_history_features_use_prior_records_only": true,
+    "user_level_leakage_note": "Synthetic users may appear in multiple temporal splits; historical features use only records earlier than the current timestamp.",
+    "user_overlap_across_splits": true,
+    "validation_fraction_of_configured_period": 0.15
+  },
+  "synthetic": true,
+  "target": {
+    "classes": [
+      "normal",
+      "synthetic_behavior_deviation",
+      "synthetic_combined_pattern",
+      "synthetic_high_amount",
+      "synthetic_rapid_repeat",
+      "synthetic_unusual_time"
+    ],
+    "column": "target_scenario_label",
+    "notice": "Classification of intentionally generated synthetic scenarios, not detection of real fraud.",
+    "real_fraud": false,
+    "source_field": "scenario_label",
+    "type": "multiclass synthetic scenario target"
+  },
+  "timestamp_rules": {
+    "ordering": "timestamp ascending, then synthetic_transaction_id ascending",
+    "split_method": "Existing timestamp-based train/validation/test files; no random reshuffle.",
+    "timezone": "UTC"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "comparisons": {
+    "data_usage_match": true,
+    "feature_names_match": true,
+    "model_results_match": true,
+    "random_seed_match": true,
+    "target_match": true
+  },
+  "created_at_utc": "2026-09-13T17:58:15Z",
+  "error_analysis_version": "1.0.0",
+  "reproduced_baseline_version": "1.0.0",
+  "reproduced_test_metrics": {
+    "accuracy": 0.862826,
+    "classes": [
+      "normal",
+      "synthetic_behavior_deviation",
+      "synthetic_combined_pattern",
+      "synthetic_high_amount",
+      "synthetic_rapid_repeat",
+      "synthetic_unusual_time"
+    ],
+    "confusion_matrix": [
+      [
+        1079,
+        28,
+        4,
+        21,
+        0,
+        0
+      ],
+      [
+        26,
+        8,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        7,
+        6,
+        0,
+        1
+      ],
+      [
+        26,
+        1,
+        5,
+        82,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        52,
+        0
+      ],
+      [
+        74,
+        1,
+        0,
+        0,
+        0,
+        30
+      ]
+    ],
+    "macro_f1": 0.617953,
+    "macro_precision": 0.707707,
+    "macro_recall": 0.591472,
+    "per_class": {
+      "normal": {
+        "f1": 0.921435,
+        "precision": 0.891736,
+        "recall": 0.95318,
+        "support": 1132
+      },
+      "synthetic_behavior_deviation": {
+        "f1": 0.216216,
+        "precision": 0.210526,
+        "recall": 0.222222,
+        "support": 36
+      },
+      "synthetic_combined_pattern": {
+        "f1": 0.4,
+        "precision": 0.4375,
+        "recall": 0.368421,
+        "support": 19
+      },
+      "synthetic_high_amount": {
+        "f1": 0.728889,
+        "precision": 0.738739,
+        "recall": 0.719298,
+        "support": 114
+      },
+      "synthetic_rapid_repeat": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 52
+      },
+      "synthetic_unusual_time": {
+        "f1": 0.441176,
+        "precision": 0.967742,
+        "recall": 0.285714,
+        "support": 105
+      }
+    },
+    "weighted_f1": 0.850388
+  },
+  "stored_baseline_version": "1.0.0",
+  "stored_test_metrics": {
+    "accuracy": 0.862826,
+    "classes": [
+      "normal",
+      "synthetic_behavior_deviation",
+      "synthetic_combined_pattern",
+      "synthetic_high_amount",
+      "synthetic_rapid_repeat",
+      "synthetic_unusual_time"
+    ],
+    "confusion_matrix": [
+      [
+        1079,
+        28,
+        4,
+        21,
+        0,
+        0
+      ],
+      [
+        26,
+        8,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        7,
+        6,
+        0,
+        1
+      ],
+      [
+        26,
+        1,
+        5,
+        82,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        52,
+        0
+      ],
+      [
+        74,
+        1,
+        0,
+        0,
+        0,
+        30
+      ]
+    ],
+    "macro_f1": 0.617953,
+    "macro_precision": 0.707707,
+    "macro_recall": 0.591472,
+    "per_class": {
+      "normal": {
+        "f1": 0.921435,
+        "precision": 0.891736,
+        "recall": 0.95318,
+        "support": 1132
+      },
+      "synthetic_behavior_deviation": {
+        "f1": 0.216216,
+        "precision": 0.210526,
+        "recall": 0.222222,
+        "support": 36
+      },
+      "synthetic_combined_pattern": {
+        "f1": 0.4,
+        "precision": 0.4375,
+        "recall": 0.368421,
+        "support": 19
+      },
+      "synthetic_high_amount": {
+        "f1": 0.728889,
+        "precision": 0.738739,
+        "recall": 0.719298,
+        "support": 114
+      },
+      "synthetic_rapid_repeat": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 52
+      },
+      "synthetic_unusual_time": {
+        "f1": 0.441176,
+        "precision": 0.967742,
+        "recall": 0.285714,
+        "support": 105
+      }
+    },
+    "weighted_f1": 0.850388
+  },
+  "test_was_used_for_fit": false,
+  "test_was_used_for_selection": false,
+  "valid": true
+}

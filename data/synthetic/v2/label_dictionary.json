@@ -1,0 +1,55 @@
+{
+  "dataset_type": "synthetic_research",
+  "dataset_version": "v2",
+  "labels": {
+    "normal": {
+      "generation_rule": "Sample user-relative category, amount, time, merchant, channel, and transaction-gap behavior with overlap.",
+      "intended_use": "Control group for realistic-overlap data-quality and feature experiments.",
+      "limitations": "Normal is a generator class, not evidence that a real transaction is safe.",
+      "meaning": "A generated transaction drawn from ordinary synthetic user behavior with natural variation.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_behavior_deviation": {
+      "generation_rule": "Select a varied subset of user-relative behavior changes without exposing the scenario label as a feature.",
+      "intended_use": "Controlled behavioral-overlap experiment.",
+      "limitations": "The behavioral profile is synthetic and is not a verified user preference or outcome.",
+      "meaning": "A transaction with one or more moderate changes from synthetic user category, merchant, channel, amount, frequency, or time behavior.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_combined_pattern": {
+      "generation_rule": "Sample a varied subset of amount, time, repeat, category, merchant, and channel deviations.",
+      "intended_use": "Controlled multi-signal overlap experiment.",
+      "limitations": "Combined signals remain generator-defined and cannot establish real-world detection performance.",
+      "meaning": "A transaction combining two or more weak or moderate synthetic deviations with overlap across scenarios.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_high_amount": {
+      "generation_rule": "Apply a mixture of moderate, strong, user-relative, and category-compatible amount deviations.",
+      "intended_use": "Controlled amount-signal experiment with overlap from naturally expensive normal purchases.",
+      "limitations": "Amount deviations remain generator-defined and are not fraud outcomes.",
+      "meaning": "A transaction with a controlled, variable increase relative to synthetic user behavior.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_rapid_repeat": {
+      "generation_rule": "Use a mixture of short, borderline, and longer repeat intervals with variable merchant/category reuse.",
+      "intended_use": "Controlled temporal-repetition experiment with natural short-gap overlap.",
+      "limitations": "A short interval is a synthetic signal and does not imply unauthorized activity.",
+      "meaning": "A transaction with a varied short-to-borderline interval after the same user's prior activity.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_unusual_time": {
+      "generation_rule": "Vary time relative to the user's typical hour; do not use one globally exclusive UTC-hour window.",
+      "intended_use": "Controlled user-relative temporal-deviation experiment.",
+      "limitations": "Time deviation is synthetic and not a real-world suspicious-activity decision.",
+      "meaning": "A transaction with a user-relative time deviation across late, borderline, and ordinary clock hours.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    }
+  },
+  "synthetic_label_notice": "Synthetic scenario labels identify intentionally generated scenarios. They do not represent confirmed fraud, real financial crime, or real-world risk outcomes."
+}

@@ -1,0 +1,55 @@
+{
+  "dataset_type": "synthetic_research",
+  "dataset_version": "v1",
+  "labels": {
+    "normal": {
+      "generation_rule": "Preferred category/merchant, typical hour, and ordinary amount draw.",
+      "intended_use": "Control group for data-quality and feature experiments.",
+      "limitations": "Normal is a generator class, not evidence that a real transaction is safe.",
+      "meaning": "A generated transaction using the user's ordinary synthetic behavior.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_behavior_deviation": {
+      "generation_rule": "Choose a category outside the user's preferred category set.",
+      "intended_use": "Controlled categorical-deviation experiment.",
+      "limitations": "Category preference is synthetic and not a ground-truth behavioral profile.",
+      "meaning": "A transaction generated in a less-preferred synthetic category or merchant pattern.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_combined_pattern": {
+      "generation_rule": "Apply the high-amount, unusual-time, and behavior-deviation generators together.",
+      "intended_use": "Controlled multi-signal experiment.",
+      "limitations": "Combined signals are deliberately constructed and may overstate separability.",
+      "meaning": "A transaction combining high amount, unusual time, and category deviation rules.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_high_amount": {
+      "generation_rule": "Multiply the user's ordinary amount draw by a controlled factor.",
+      "intended_use": "Controlled amount-signal experiment.",
+      "limitations": "The amount rule may be easier to detect than real-world behavior.",
+      "meaning": "An amount intentionally increased relative to the synthetic user's ordinary range.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_rapid_repeat": {
+      "generation_rule": "Place the transaction 1-10 minutes after the prior synthetic user event and usually reuse its merchant.",
+      "intended_use": "Controlled temporal repetition experiment.",
+      "limitations": "Short intervals are injected by rule and do not imply unauthorized activity.",
+      "meaning": "A generated transaction placed shortly after the same user's prior activity.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    },
+    "synthetic_unusual_time": {
+      "generation_rule": "Use UTC hour 00-04 or 23 while retaining the user's synthetic date.",
+      "intended_use": "Controlled time-of-day experiment.",
+      "limitations": "Unusual time is user-profile-relative only in this synthetic dataset.",
+      "meaning": "A transaction generated during the documented unusual-hour window.",
+      "real_fraud": false,
+      "supervised_target_allowed": true
+    }
+  },
+  "synthetic_label_notice": "Synthetic scenario labels identify intentionally generated scenarios. They do not represent confirmed fraud, real financial crime, or real-world risk outcomes."
+}

@@ -1,0 +1,91 @@
+# SpendShield local development startup (Windows + Ubuntu/WSL)
+
+Do not start or stop services automatically from tooling. Start each service
+manually in its own terminal when live verification is required.
+
+## Cassandra — Ubuntu/WSL
+
+Start:
+
+```bash
+~/Cassandra/bin/cassandra -f
+```
+
+Stop from a second WSL terminal:
+
+```bash
+~/Cassandra/bin/nodetool stopdaemon
+```
+
+## MongoDB — PowerShell
+
+SpendShield uses the replica-set instance on port `27018`. Leave any existing
+MongoDB service on port `27017` untouched.
+
+```powershell
+mongod --dbpath "D:\E_Drive\Project\.mongodb-rs-validation" --port 27018 --replSet rs0 --bind_ip 127.0.0.1
+```
+
+Stop with `Ctrl+C`.
+
+## Backend — PowerShell
+
+```powershell
+cd D:\E_Drive\Project\backend
+.\.venv\Scripts\Activate.ps1
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The backend development host allowlist is in `backend/.env`:
+
+```text
+SPENDSHIELD_ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,10.165.59.245
+```
+
+When the PC LAN IPv4 changes, update that environment value and
+`mobile/.env.local` together, then restart Uvicorn.
+
+## Mobile — PowerShell
+
+```powershell
+cd D:\E_Drive\Project\mobile
+npm install
+npx expo start --lan
+```
+
+If `.env.local` was changed, use `npx expo start --lan --clear` to reload
+`EXPO_PUBLIC_API_BASE_URL`.
+
+## Verification
+
+Before live integration checks, verify:
+
+```powershell
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8000/api/v1/health
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8000/api/v1/health/dependencies
+```
+
+Expected dependency identity:
+
+- MongoDB: `127.0.0.1:27018`, replica set `rs0`, writable primary.
+- Cassandra: `127.0.0.1:9042`.
+- Backend: `127.0.0.1:8000`.
+- Physical Expo Go API: `http://10.165.59.245:8000/api/v1` (replace the LAN
+  address when it changes).
+
+## Demo merchant QR classroom flow
+
+1. Start all four services above manually.
+2. Sign in to the mobile app and open More > Demo MPIN.
+3. Set a six-digit demo MPIN; it is hashed and is not a real bank PIN.
+4. Open More > Demo merchant QR and select either `MODI-CHAI-001` or
+   `MELONI-CHOCO-002`.
+5. Display that generated QR on a second screen, then open Pay > Scan QR.
+6. Scan it or use the gallery flow, confirm the registered merchant, enter the
+   amount, review the server account, enter the demo MPIN, and confirm.
+7. The success response contains the backend-provided previous balance, paid
+   amount, remaining balance, transaction ID, and merchant details.
+
+The QR payload is SpendShield demo JSON, not UPI and not a real payment QR.
+The backend registry is authoritative; changing only the merchant name in a
+payload does not authorize payment.

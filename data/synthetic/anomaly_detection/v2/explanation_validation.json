@@ -1,0 +1,18 @@
+{
+  "bounded_sample_limit": 25,
+  "deterministic_output": true,
+  "errors": [],
+  "forbidden_terms_checked": [
+    "fraud",
+    "financial crime",
+    "payment blocking",
+    "payment rejection",
+    "confirmed fraud",
+    "guaranteed fraud",
+    "automatic fraud decision"
+  ],
+  "labels_used_for_validation_only": true,
+  "rows_checked": 20,
+  "valid": true,
+  "warnings": []
+}

@@ -1,0 +1,102 @@
+{
+  "evidence_uses_validation_only": true,
+  "generator_was_modified": false,
+  "patterns": [
+    {
+      "affected_classes": [
+        "synthetic_unusual_time",
+        "synthetic_combined_pattern"
+      ],
+      "evidence_validation_prevalence": {
+        "normal": 0.0,
+        "synthetic_behavior_deviation": 0.0,
+        "synthetic_combined_pattern": 1.0,
+        "synthetic_high_amount": 0.0,
+        "synthetic_rapid_repeat": 0.089888,
+        "synthetic_unusual_time": 1.0
+      },
+      "observed_pattern": "unusual_utc_hour_window",
+      "potential_future_improvement": "Vary the scenario rule and overlap distributions in a future dataset version without changing the current artifact.",
+      "why_it_may_be_a_shortcut": "A near-exclusive prevalence can make the generator rule directly recoverable from observable features."
+    },
+    {
+      "affected_classes": [
+        "synthetic_rapid_repeat"
+      ],
+      "evidence_validation_prevalence": {
+        "normal": 0.0,
+        "synthetic_behavior_deviation": 0.0,
+        "synthetic_combined_pattern": 0.0,
+        "synthetic_high_amount": 0.0,
+        "synthetic_rapid_repeat": 1.0,
+        "synthetic_unusual_time": 0.0
+      },
+      "observed_pattern": "rapid_repeat_window_at_most_600_seconds",
+      "potential_future_improvement": "Vary the scenario rule and overlap distributions in a future dataset version without changing the current artifact.",
+      "why_it_may_be_a_shortcut": "A near-exclusive prevalence can make the generator rule directly recoverable from observable features."
+    },
+    {
+      "affected_classes": [],
+      "evidence_validation_prevalence": {
+        "normal": 0.00089,
+        "synthetic_behavior_deviation": 0.0,
+        "synthetic_combined_pattern": 0.62963,
+        "synthetic_high_amount": 0.65812,
+        "synthetic_rapid_repeat": 0.0,
+        "synthetic_unusual_time": 0.0
+      },
+      "observed_pattern": "high_amount_relative_to_prior_average_at_least_3x",
+      "potential_future_improvement": "Vary the scenario rule and overlap distributions in a future dataset version without changing the current artifact.",
+      "why_it_may_be_a_shortcut": "A near-exclusive prevalence can make the generator rule directly recoverable from observable features."
+    },
+    {
+      "affected_classes": [],
+      "evidence_validation_prevalence": {
+        "normal": 0.0,
+        "synthetic_behavior_deviation": 0.0,
+        "synthetic_combined_pattern": 0.0,
+        "synthetic_high_amount": 0.0,
+        "synthetic_rapid_repeat": 0.0,
+        "synthetic_unusual_time": 0.0
+      },
+      "observed_pattern": "combined_fixed_high_time_and_rapid_pattern",
+      "potential_future_improvement": "Vary the scenario rule and overlap distributions in a future dataset version without changing the current artifact.",
+      "why_it_may_be_a_shortcut": "A near-exclusive prevalence can make the generator rule directly recoverable from observable features."
+    },
+    {
+      "affected_classes": [],
+      "evidence_validation_prevalence": {
+        "normal": 0.0,
+        "synthetic_behavior_deviation": 0.0,
+        "synthetic_combined_pattern": 0.0,
+        "synthetic_high_amount": 0.0,
+        "synthetic_rapid_repeat": 0.0,
+        "synthetic_unusual_time": 0.0
+      },
+      "observed_pattern": "missing_previous_transaction_history",
+      "potential_future_improvement": "Vary the scenario rule and overlap distributions in a future dataset version without changing the current artifact.",
+      "why_it_may_be_a_shortcut": "A near-exclusive prevalence can make the generator rule directly recoverable from observable features."
+    },
+    {
+      "affected_classes": [
+        "synthetic_rapid_repeat"
+      ],
+      "evidence_validation_prevalence": {
+        "test_recall": 1.0
+      },
+      "observed_pattern": "rapid_repeat_test_recall",
+      "potential_future_improvement": "Test on a future generator version with overlapping short-interval normal behavior.",
+      "why_it_may_be_a_shortcut": "The existing baseline achieves perfect test recall for the rapid-repeat class."
+    },
+    {
+      "affected_classes": [
+        "synthetic_behavior_deviation"
+      ],
+      "evidence_validation_prevalence": {},
+      "observed_pattern": "preferred_category_not_observable",
+      "potential_future_improvement": "Use versioned point-in-time user-relative signals in a future dataset revision.",
+      "why_it_may_be_a_limitation": "The v1 source exposes category history frequency but not the user's preferred-category profile."
+    }
+  ],
+  "status": "REVIEW_REQUIRED_BEFORE_COMPLEX_MODEL"
+}

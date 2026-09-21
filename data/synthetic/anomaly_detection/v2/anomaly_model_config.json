@@ -1,0 +1,41 @@
+{
+  "artifact_version": "1.0.0",
+  "backend_integration_created": true,
+  "feature_names": [
+    "amount",
+    "transaction_hour",
+    "day_of_week",
+    "user_historical_transaction_count_before",
+    "user_historical_average_amount_before",
+    "time_since_previous_transaction_seconds",
+    "user_historical_category_frequency_before",
+    "merchant_novelty_before",
+    "channel_novelty_before",
+    "user_relative_amount_deviation",
+    "user_relative_time_deviation",
+    "time_since_previous_transaction_seconds__missing"
+  ],
+  "fit_data": "train split only",
+  "labels_used_during_fit": false,
+  "library": "Python standard library",
+  "library_version": "3.11.9",
+  "model_type": "robust_mad_distance",
+  "model_version": "1.0.0",
+  "parameter_artifact": "anomaly_model_parameters.json",
+  "parameters": {
+    "aggregation": "unweighted mean across 12 selected features",
+    "distance": "absolute deviation from train median divided by train robust scale",
+    "per_feature_distance_cap": 8.0,
+    "scale": "max(1.4826 * MAD, IQR / 1.349, 1e-9)"
+  },
+  "production_artifact_written": false,
+  "python_version": "3.11.9",
+  "random_seed": 20260913,
+  "scenario_metadata_used_during_fit": false,
+  "score_semantics": {
+    "anomaly_score": "raw score min-max normalized with train raw min/max and clipped to [0, 1]",
+    "comparability": "Comparable only within this dataset/model configuration; not comparable across versions without a controlled recalibration study.",
+    "direction": "higher means more anomalous",
+    "raw_score": "mean capped robust distance from train-fitted feature medians; higher means more anomalous"
+  }
+}

@@ -1,0 +1,1245 @@
+SpendShield — Intelligent Payment & Financial Awareness Platform
+1. Basic Project Idea
+
+SpendShield is a smart digital payment application.
+
+Its main goal is not just to make payments.
+
+The app will also tell the user:
+
+How much balance is left after the payment.
+How much money is going to be deducted in the future.
+Which subscriptions are automatically deducting money.
+What the user's spending pattern looks like.
+Whether any unusual or suspicious spending is happening.
+
+Simple concept:
+
+Pay → See Balance → Understand Where Money Is Going → See Future Payments → Decide
+
+2. What Is the Problem?
+
+In normal payment apps, the user makes a payment:
+
+Balance = ₹1,500
+
+Payment = ₹500
+
+Payment Successful
+
+But the user does not immediately feel that:
+
+Now I have only ₹1,000.
+How many more payments are coming in the future?
+Which subscriptions will automatically renew?
+
+In SpendShield:
+
+PAYMENT SUCCESSFUL
+
+Paid: ₹500
+Before Balance: ₹1,500
+After Balance: ₹1,000
+
+This means that after every payment, the user will clearly see the remaining balance.
+
+This is SpendShield's first major feature.
+
+3. Second Major Problem — Forgotten Subscriptions
+
+Today, people have many subscriptions:
+
+Netflix/Streaming-type services
+Music
+Cloud Storage
+Gym
+Learning platforms
+Software
+Gaming
+Memberships
+
+Problem:
+
+The user purchased a subscription 6 months ago.
+
+Now they do not even remember it.
+
+Auto-renewal is ON.
+
+Suddenly ₹299 is deducted.
+
+SpendShield's idea:
+
+Give a warning 4–5 days before the payment.
+
+Upcoming Payment
+
+StreamBox
+₹299
+
+Payment will be deducted in 4 days.
+
+Are you still using this application?
+
+[ YES ] [ NO ]
+
+4. If the User Selects YES
+
+If the user says:
+
+YES, I USE IT
+
+Then:
+
+SpendShield will close the current reminder.
+It will not disturb the user.
+It will remind the user again before the next billing cycle.
+
+Simple:
+
+YES
+ ↓
+Current reminder dismissed
+ ↓
+Check again at the next renewal
+5. If the User Selects NO
+
+If the user says:
+
+NO, I DON'T
+
+Then SpendShield will say:
+
+Review the subscription.
+Check auto-renewal.
+If you are not using it, you can turn OFF auto-renewal.
+
+Example:
+
+Auto-renewal: ON
+        ↓
+User reviews subscription
+        ↓
+Auto-renewal: OFF
+        ↓
+Future simulated deductions stop
+
+Important:
+
+SpendShield will not cancel the subscription by itself.
+
+The final decision will be made by the user.
+
+6. Notification System
+
+The user will have a setting:
+
+Subscription Awareness
+
+Upcoming payment alerts
+ON
+
+When ON:
+
+Reminder 4–5 days before.
+
+When OFF:
+
+Do not send reminders.
+
+System philosophy:
+
+Detect → Warn → Ask → Suggest → User Decides
+
+SpendShield will not silently make decisions on behalf of the user.
+
+7. Payment Application Features
+
+The app will feel like an actual payment application.
+
+User Account
+Registration
+Login
+Profile
+Balance
+Payment PIN
+Security settings
+Payment
+Send Money
+Receive Money
+Request Money
+QR Scan
+Merchant Payment
+Payment Confirmation
+Receipt
+Transaction History
+Every Transaction Will Contain
+Merchant/person
+Amount
+Category
+Date
+Time
+Transaction ID
+Status
+Balance Before
+Balance After
+8. QR Payment System
+
+The project will have fictional merchants.
+
+Example:
+
+QuickBite → Food
+UrbanMart → Shopping
+FreshBasket → Grocery
+CoffeeHub → Food
+TechNest → Electronics
+RideGo → Transport
+
+Every merchant will have a unique QR code.
+
+9. QR Payment Flow
+
+User:
+
+Open SpendShield
+       ↓
+Scan QR
+       ↓
+Identify Merchant
+       ↓
+Enter Amount
+       ↓
+Confirm Payment
+       ↓
+Payment PIN
+       ↓
+FastAPI Validation
+       ↓
+Deduct Balance
+       ↓
+Save Transaction
+       ↓
+Payment Successful
+
+Example:
+
+QuickBite
+
+Paid: ₹450
+
+Before Balance: ₹5,000
+After Balance: ₹4,550
+
+This balance-awareness feature is the core feature of SpendShield.
+
+10. Real Money Not Used — Fictional Financial Ecosystem
+
+Because this is a semester project, we will not connect to a real bank/payment system.
+
+Instead:
+
+Fictional Bank
+
+ShieldBank
+
+Fictional Wallet
+
+SpendShield Wallet
+
+Fictional Users
+Kanishk
+Rahul
+Priya
+etc.
+Fictional Merchants
+QuickBite
+UrbanMart
+CoffeeHub
+Fictional Services
+StreamBox
+MusicFlow
+CloudVault
+
+Important point:
+
+The money will be fake, but the software architecture, database, API, transaction engine, and ML system will be real.
+
+11. Merchant Portal
+
+There can be a separate dashboard for merchants.
+
+Example:
+
+QUICKBITE
+
+Today's Sales
+₹18,420
+
+Transactions
+47
+
+Successful
+45
+
+Failed
+2
+
+Merchant Features
+Registration
+QR generation
+Receive payments
+Transaction history
+Sales dashboard
+Payment status
+Refund simulation
+
+This will make the project a closed-loop payment ecosystem.
+
+12. Fictional Subscription Apps
+
+To make the subscription system realistic, small fictional apps will be created.
+
+Example:
+
+StreamBox
+
+₹299/month
+
+MusicFlow
+
+₹119/month
+
+CloudVault
+
+₹149/month
+
+GymPlus
+
+₹999/month
+
+The main purpose of these apps is:
+
+To generate realistic subscription/payment data for SpendShield.
+
+13. Subscription Flow
+
+The user opens StreamBox:
+
+Premium Plan
+
+₹299/month
+
+[ Subscribe ]
+
+SpendShield will store this in the database:
+
+Subscription:
+StreamBox
+
+Amount:
+₹299
+
+Frequency:
+Monthly
+
+Next Payment:
+Date X
+
+Auto-renewal:
+ON
+
+On the next billing date, the payment engine will process the recurring payment.
+
+14. Recurring Payment Detection — Main ML Feature
+
+This is where the actual Data Science will come in.
+
+The system will not simply hard-code:
+
+"StreamBox = Subscription"
+
+Instead, it will identify the pattern from transaction history.
+
+Example:
+
+22 May → StreamBox → ₹299
+21 Jun → StreamBox → ₹299
+22 Jul → StreamBox → ₹299
+21 Aug → StreamBox → ₹299
+
+Python will analyze:
+
+Merchant
+Amount
+Dates
+Time interval
+Frequency
+Historical behavior
+
+And output:
+
+Merchant: StreamBox
+Amount: ₹299
+Frequency: Monthly
+Confidence: 98%
+
+This means:
+
+The system itself detected the recurring payment.
+
+15. Monthly / Quarterly / Yearly Detection
+
+The system will understand different frequencies:
+
+Monthly
+
+₹299 every month
+
+Quarterly
+
+₹899 every 3 months
+
+Yearly
+
+₹2,999 every year
+
+System:
+
+Past Transactions
+       ↓
+Pattern Analysis
+       ↓
+Frequency Detection
+       ↓
+Next Payment Prediction
+16. Upcoming Payment Prediction
+
+Suppose the previous payment intervals were:
+
+30 days
+31 days
+30 days
+
+The system will understand:
+
+Approximately every 30 days, a payment is happening.
+
+Then:
+
+Last Payment
+     ↓
+Average Interval
+     ↓
+Next Payment Date
+
+The scheduler will check:
+
+Is the payment 4–5 days away?
+
+If yes:
+
+Generate a Subscription Warning.
+
+17. Subscription Intelligence
+
+Detailed information will be stored for every subscription:
+
+Subscription
+│
+├── Name
+├── Amount
+├── Frequency
+├── Start Date
+├── Next Payment
+├── Auto-renewal
+├── Total Paid
+├── Last Used
+├── Usage Frequency
+└── Review History
+
+Example:
+
+StreamBox
+
+₹299/month
+
+Total Paid: ₹1,794
+
+Next Payment: 4 days
+
+Usage: Low
+
+Auto-renewal: ON
+
+→ Review Recommended
+
+18. Usage-Based Subscription Analysis
+
+If the fictional subscription app provides usage data, SpendShield will analyze that as well.
+
+Example:
+
+This month:
+2 sessions
+
+Previous month:
+17 sessions
+
+The system will notice:
+
+Usage has decreased significantly.
+
+Then:
+
+StreamBox usage has decreased significantly.
+
+And:
+
+Renewal is in 4 days. Would you like to review the subscription?
+
+This makes the project a simple payment app transformed into an intelligent financial assistant.
+
+19. Transaction Categorization
+
+Every transaction will receive a category:
+
+Food
+Grocery
+Shopping
+Transport
+Entertainment
+Subscriptions
+Bills
+Education
+Healthcare
+Transfers
+Other
+
+Example:
+
+QuickBite    ₹450   → Food
+RideGo       ₹180   → Transport
+StreamBox    ₹299   → Subscription
+UrbanMart  ₹1,250   → Shopping
+
+This categorized data will later be used for ML/analytics.
+
+20. Merchant Name Normalization
+
+Real transaction descriptions can be messy.
+
+Example:
+
+STREAMBOX
+STREAMBOX PREMIUM
+STREAMBOX*SUB
+
+The system should identify them as:
+
+StreamBox
+
+Similarly:
+
+QUICKBITE
+QUICK BITE
+QB*001
+
+→ QuickBite
+
+For this, we can use:
+
+Text normalization
+Fuzzy matching
+TF-IDF
+Embeddings
+
+This will be the NLP component.
+
+21. Spending Pattern Analysis
+
+SpendShield will examine where the money is going.
+
+Example:
+
+Food             ₹4,820
+Shopping         ₹3,200
+Transport        ₹2,180
+Subscriptions    ₹1,566
+Entertainment    ₹1,850
+Bills            ₹3,400
+
+Comparison:
+
+Current month
+Previous month
+Historical average
+Category-wise spending
+
+This will allow the user to clearly understand their spending habits.
+
+22. Unusual Spending Detection
+
+The system will learn the user's normal spending pattern.
+
+Example:
+
+Normally:
+
+₹500
+₹800
+₹1,200
+₹700
+₹1,500
+
+Suddenly:
+
+₹15,000
+
+The system will flag:
+
+Unusual Spending Detected
+
+Possible Algorithms
+Isolation Forest
+Local Outlier Factor
+Statistical anomaly detection
+
+This is an actual ML feature.
+
+23. Spending Forecast
+
+The system will estimate future spending.
+
+Example:
+
+Next 30 Days
+
+Normal Spending:
+₹18,400
+
+Recurring Payments:
+₹3,366
+
+Expected Total Outflow:
+₹21,766
+
+This means the user will not only know:
+
+"How much do I have today?"
+
+But also:
+
+"Approximately how much could go out in the future?"
+
+24. Actually Spendable Balance — Killer Feature
+
+This is different from the normal balance.
+
+Suppose:
+
+Current Balance = ₹40,000
+
+Upcoming Commitments
+StreamBox      ₹299
+MusicFlow      ₹119
+CloudVault     ₹149
+Insurance    ₹1,800
+GymPlus        ₹999
+
+Total commitments:
+
+₹3,366
+
+The user has kept a safety reserve:
+
+₹4,000
+
+Then:
+
+Current Balance       ₹40,000
+Upcoming Payments      ₹3,366
+Safety Reserve         ₹4,000
+--------------------------------
+Actually Spendable    ₹32,634
+
+Important:
+
+Actually Spendable is not the bank's official balance.
+
+It is a SpendShield estimated financial-awareness metric.
+
+25. Financial Leakage Analysis
+
+The system will add recurring payments.
+
+Example:
+
+StreamBox      ₹299
+MusicFlow      ₹119
+CloudVault     ₹149
+GymPlus        ₹999
+Others         ₹450
+--------------------
+Total        ₹2,016/month
+
+Annual:
+
+₹2,016 × 12
+= ₹24,192/year
+
+The system will say:
+
+You have ₹2,016/month in recurring payments.
+
+However:
+
+It will not assume that the subscriptions are useless.
+
+It will only provide a suggestion to review them.
+
+26. Small Payment Awareness
+
+Many small payments can also add up.
+
+Example:
+
+₹79
+₹99
+₹129
+₹149
+₹89
+₹119
+₹99
+₹149
+
+Total:
+
+₹912
+
+The system will say:
+
+8 small payments added up to ₹912 this month.
+
+This will help the user understand:
+
+"Small payments can also combine to become a significant amount."
+
+27. Main Dashboard
+
+The dashboard will provide a complete financial snapshot.
+
+SPENDSHIELD
+
+Current Balance
+₹42,680
+
+Actually Spendable
+₹31,420
+
+Committed
+₹7,260
+
+Upcoming Payments
+StreamBox     ₹299     4 days
+Insurance   ₹1,800     5 days
+GymPlus       ₹999     8 days
+Monthly Spending
+Food           ₹4,820
+Shopping       ₹3,200
+Transport      ₹2,180
+Subscriptions  ₹1,566
+
+This means, on one screen:
+
+Current + Future + Spending Pattern
+
+will all be visible.
+
+28. Transaction Receipt
+
+Every payment will have a proper receipt.
+
+PAYMENT SUCCESSFUL
+
+QuickBite
+
+Amount:
+₹450
+
+Balance Before:
+₹5,000
+
+Balance After:
+₹4,550
+
+Transaction ID:
+SSX928173
+
+Category:
+Food
+
+Date:
+22 August 2026
+
+Time:
+10:42 PM
+
+Most important:
+
+Balance After
+
+This is part of SpendShield's identity.
+
+29. Smart Notifications
+
+SpendShield will send notifications in different situations.
+
+Payment Success
+
+₹450 paid to QuickBite.
+Remaining balance: ₹4,550.
+
+Subscription Reminder
+
+StreamBox ₹299 will be deducted in 4 days.
+
+Spending Alert
+
+Shopping spending is 43% higher than your normal average.
+
+Recurring Payment Detection
+
+We detected a monthly ₹299 payment to StreamBox.
+
+Financial Awareness
+
+₹3,366 of your balance is committed to upcoming payments.
+
+30. Backend Architecture
+
+The main backend will be Python + FastAPI.
+
+Simple Architecture
+        Frontend
+      Next.js / React
+              ↓
+          FastAPI
+                ↓
+  ┌────┼────────────┐
+  ↓             ↓                                 ↓
+Payment ML       Auth
+Engine    Engine
+                   ↓
+  ┌─────┼─────────┐
+  ↓               ↓                          ↓
+Recurring   Anomaly        Forecast
+Detection Detection
+       ↓
+  PostgreSQL
+       ↓
+  Redis + Celery
+
+Meaning:
+
+Frontend → UI
+FastAPI → Main backend
+Payment Engine → Transactions
+ML Engine → Intelligence
+PostgreSQL → Data
+Redis + Celery → Background jobs/notifications
+31. Python Project Structure
+
+Main Python backend roughly:
+
+backend/
+│
+├── app/
+│   ├── api/
+│   │   ├── auth.py
+│   │   ├── users.py
+│   │   ├── payments.py
+│   │   ├── merchants.py
+│   │   ├── subscriptions.py
+│   │   └── intelligence.py
+│
+│   ├── models/
+│   │   ├── user.py
+│   │   ├── account.py
+│   │   ├── transaction.py
+│   │   ├── merchant.py
+│   │   └── subscription.py
+│
+│   ├── services/
+│   │   ├── payment_service.py
+│   │   ├── transaction_service.py
+│   │   ├── merchant_service.py
+│   │   └── notification_service.py
+│
+│   ├── ml/
+│   │   ├── recurring_detector.py
+│   │   ├── anomaly_detector.py
+│   │   ├── spending_forecaster.py
+│   │   └── transaction_classifier.py
+│
+│   ├── nlp/
+│   │   └── merchant_normalizer.py
+│
+│   └── workers/
+│       └── scheduled_jobs.py
+│
+├── tests/
+├── requirements.txt
+└── Dockerfile
+
+Separate:
+
+frontend/
+merchant-app/
+subscription-apps/
+ml_training/
+datasets/
+docker-compose.yml
+32. Technology Stack
+Frontend
+Next.js
+React
+Tailwind CSS
+Framer Motion
+Backend
+Python
+FastAPI
+Pydantic
+SQLAlchemy
+Database
+PostgreSQL
+Data Science
+Pandas
+NumPy
+Scikit-learn
+XGBoost
+NLP
+spaCy
+Sentence Transformers
+Fuzzy Matching
+Background Jobs
+Redis
+Celery
+Security
+JWT
+Password Hashing
+Payment PIN
+Input Validation
+Transaction Authorization
+Deployment
+Docker
+Cloud FastAPI
+Cloud PostgreSQL
+Vercel frontend
+33. Database
+Main Tables/Entities
+User
+Account
+Transaction
+Merchant
+Subscription
+Notification
+PaymentMethod
+Category
+UsageEvent
+Transaction Table
+transaction_id
+sender_id
+receiver_id
+merchant_id
+amount
+category
+transaction_type
+status
+timestamp
+balance_before
+balance_after
+reference_id
+Important Rule
+Balance After
+=
+Balance Before - Amount
+
+Maintaining balance consistency in transaction data is critical.
+
+34. Actual Data Science Components
+
+The project will have multiple ML components.
+
+1. Recurring Payment Detection
+
+Goal:
+
+Is the payment recurring or not?
+
+Metrics:
+
+Precision
+Recall
+F1
+2. Transaction Categorization
+
+Goal:
+
+Which category does the transaction belong to?
+
+Metrics:
+
+Accuracy
+Macro-F1
+Confusion Matrix
+3. Spending Forecast
+
+Goal:
+
+Approximately how much will be spent in the future?
+
+Metrics:
+
+MAE
+RMSE
+MAPE
+4. Anomaly Detection
+
+Goal:
+
+Is the transaction unusual or not?
+
+Metrics:
+
+Precision
+Recall
+PR-AUC
+5. Next Payment Prediction
+
+Goal:
+
+When will the next recurring payment happen?
+
+Metric:
+
+Date prediction error
+
+Therefore, the project will not remain just a CRUD payment application; it will also become a proper Data Science project.
+
+35. How Will the Dataset Be Created?
+
+Since the ecosystem is fictional, we can generate realistic data.
+
+Example:
+
+6 Months Data
+       +
+1,000+ Transactions
+       +
+Multiple Users
+       +
+Multiple Merchants
+       +
+Multiple Categories
+       +
+Subscriptions
+       +
+Normal Transactions
+       +
+Unusual Transactions
+       +
+Refunds
+       +
+Transfers
+Advantage
+Ground truth will be known.
+ML models can be properly tested.
+Controlled experiments will be possible.
+Public datasets can also be used for model development/comparison.
+36. Deployment
+
+The final application will be accessible over the internet.
+
+User
+ ↓
+Web Application
+ ↓
+FastAPI
+ ↓
+PostgreSQL
+ ↓
+ML Engine
+ ↓
+Notification Worker
+ ↓
+User Notification
+Components
+Frontend → Web app
+Backend → FastAPI
+Database → PostgreSQL
+Background jobs → Celery + Redis
+ML → Python ML engine
+37. Complete User Journey
+
+A complete demo will look like this:
+
+Step 1
+
+User creates a SpendShield account.
+
+Step 2
+
+Their fictional ShieldBank account contains:
+
+₹25,000
+
+Step 3
+
+User goes to QuickBite.
+
+Step 4
+
+User scans the QR.
+
+Step 5
+
+User makes a ₹500 payment.
+
+Step 6
+
+SpendShield shows:
+
+Paid: ₹500
+Before: ₹25,000
+After: ₹24,500
+Step 7
+
+User subscribes to StreamBox.
+
+₹299/month
+
+Step 8
+
+After multiple billing cycles, ML identifies:
+
+Monthly recurring payment.
+
+Step 9
+
+Four days before renewal:
+
+₹299 will be deducted in 4 days. Are you still using StreamBox?
+
+Step 10
+
+User:
+
+NO
+
+Step 11
+
+SpendShield:
+
+Review/cancel auto-renewal.
+
+Step 12
+
+User goes to the fictional StreamBox app:
+
+Auto-renewal → OFF
+
+Step 13
+
+SpendShield:
+
+Future recurring deduction disabled.
+
+Step 14
+
+Dashboard update:
+
+Upcoming commitments decrease by ₹299.
+
+And while normal payments continue, the remaining balance will continue to be shown after every payment.
+
+38. What Is the Real Innovation of the Project?
+
+This is the most important part.
+
+SpendShield's purpose is not to copy Google Pay/PhonePe/Paytm.
+
+Normal Payment App
+Pay
+ ↓
+Payment Successful
+SpendShield
+Pay
+ ↓
+See Remaining Balance
+ ↓
+Understand Spending
+ ↓
+Detect Recurring Payments
+ ↓
+Predict Future Deductions
+ ↓
+Get Warning
+ ↓
+Make Conscious Decision
+
+Meaning:
+
+Payment + Financial Awareness + Data Science
+
+in a single platform.
+
+39. One-Line Project Explanation
+
+If a professor/interviewer asks:
+
+"What is SpendShield?"
+
+Say:
+
+"SpendShield is a Python-based intelligent payment application that immediately shows the user's remaining balance after a payment and uses ML/Data Science to identify recurring payments, upcoming deductions, unusual spending, and future spending patterns, so that users can not only track their money but also manage it intelligently."
+
+40. Understand the Entire Project in One Simple Flow
+                         SPENDSHIELD
+                              │
+              ┌───────────────┴───────────────┐
+              ↓                                                                                       ↓
+       PAYMENT SYSTEM                                         INTELLIGENCE SYSTEM
+              │                                                                                      │
+              ↓                                                                                        ↓
+        QR Payments                                                                  ML / Analytics
+        Send / Receive                                                                         │
+              │                                                               ┌────────┼────────┐
+              ↓                                                                 ↓                       ↓                      ↓
+        Transaction                                                  Recurring          Anomaly         Forecast
+              │                                                            Detection Detection
+              ↓                                                               │
+        Balance After                                                   ↓
+              │                                                     Upcoming Payment
+              │                                                               │
+              └────────────┬──────────┘
+                                                   ↓
+                                  FINANCIAL AWARENESS
+                                                   │
+             ┌─────────────┼─────────────┐
+             ↓                                     ↓                                     ↓
+       Actually                           Leakage                      Subscription
+       Spendable                        Analysis                          Alerts
+       Balance 
+
+In Simple Words
+
+SpendShield looks at the user's money from three angles:
+
+Past → Where was the money spent?
+
+Present → How much money is actually available now?
+
+Future → How much money is going to be deducted later?
+
+And this is the real USP of the project.

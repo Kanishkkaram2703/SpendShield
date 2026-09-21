@@ -1,0 +1,544 @@
+{
+  "baseline_version": "1.0.0",
+  "created_at_utc": "2026-09-12T06:28:12Z",
+  "data_usage": {
+    "fit": "train only",
+    "random_row_split": false,
+    "test": "final held-out evaluation after fixed baseline configuration",
+    "validation": "reported for research comparison; no test tuning"
+  },
+  "dataset_type": "synthetic_research",
+  "dataset_version": "v1",
+  "evaluation_type": "multiclass synthetic scenario classification",
+  "feature_count": 28,
+  "feature_generation_version": "1.0.0",
+  "feature_names": [
+    "amount",
+    "transaction_hour",
+    "day_of_week",
+    "user_historical_transaction_count_before",
+    "user_historical_average_amount_before",
+    "time_since_previous_transaction_seconds",
+    "user_historical_category_frequency_before",
+    "time_since_previous_transaction_seconds__missing",
+    "currency__INR",
+    "currency____unknown",
+    "merchant_category____unknown",
+    "merchant_category__bills",
+    "merchant_category__education",
+    "merchant_category__entertainment",
+    "merchant_category__food",
+    "merchant_category__grocery",
+    "merchant_category__healthcare",
+    "merchant_category__home",
+    "merchant_category__other",
+    "merchant_category__shopping",
+    "merchant_category__subscriptions",
+    "merchant_category__transport",
+    "merchant_category__travel",
+    "transaction_channel__BANK_SIMULATED",
+    "transaction_channel__CARD_SIMULATED",
+    "transaction_channel__QR_SIMULATED",
+    "transaction_channel__WALLET_SIMULATED",
+    "transaction_channel____unknown"
+  ],
+  "interpretation_notice": "Metrics measure performance on intentionally generated synthetic scenarios only. They do not measure real fraud detection, prevention, savings, blocking, or risk reduction.",
+  "known_limitations": [
+    "Synthetic scenario patterns may be easier to classify than real behavior.",
+    "No real fraud ground truth exists.",
+    "Gaussian Naive Bayes assumptions may not reflect feature relationships.",
+    "No hyperparameter tuning or class rebalancing was performed.",
+    "Results are not production-ready and must not drive financial decisions."
+  ],
+  "model_artifact_written": false,
+  "models": {
+    "gaussian_naive_bayes": {
+      "configuration": {
+        "class_priors": "training class frequencies",
+        "preprocessing": "feature matrix generated with train-fitted medians and one-hot vocabulary",
+        "variance_floor": 1e-09
+      },
+      "test": {
+        "class_counts": {
+          "normal": 1132,
+          "synthetic_behavior_deviation": 36,
+          "synthetic_combined_pattern": 19,
+          "synthetic_high_amount": 114,
+          "synthetic_rapid_repeat": 52,
+          "synthetic_unusual_time": 105
+        },
+        "metrics": {
+          "accuracy": 0.862826,
+          "classes": [
+            "normal",
+            "synthetic_behavior_deviation",
+            "synthetic_combined_pattern",
+            "synthetic_high_amount",
+            "synthetic_rapid_repeat",
+            "synthetic_unusual_time"
+          ],
+          "confusion_matrix": [
+            [
+              1079,
+              28,
+              4,
+              21,
+              0,
+              0
+            ],
+            [
+              26,
+              8,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              7,
+              6,
+              0,
+              1
+            ],
+            [
+              26,
+              1,
+              5,
+              82,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              52,
+              0
+            ],
+            [
+              74,
+              1,
+              0,
+              0,
+              0,
+              30
+            ]
+          ],
+          "macro_f1": 0.617953,
+          "macro_precision": 0.707707,
+          "macro_recall": 0.591472,
+          "per_class": {
+            "normal": {
+              "f1": 0.921435,
+              "precision": 0.891736,
+              "recall": 0.95318,
+              "support": 1132
+            },
+            "synthetic_behavior_deviation": {
+              "f1": 0.216216,
+              "precision": 0.210526,
+              "recall": 0.222222,
+              "support": 36
+            },
+            "synthetic_combined_pattern": {
+              "f1": 0.4,
+              "precision": 0.4375,
+              "recall": 0.368421,
+              "support": 19
+            },
+            "synthetic_high_amount": {
+              "f1": 0.728889,
+              "precision": 0.738739,
+              "recall": 0.719298,
+              "support": 114
+            },
+            "synthetic_rapid_repeat": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 52
+            },
+            "synthetic_unusual_time": {
+              "f1": 0.441176,
+              "precision": 0.967742,
+              "recall": 0.285714,
+              "support": 105
+            }
+          },
+          "weighted_f1": 0.850388
+        },
+        "row_count": 1458
+      },
+      "validation": {
+        "class_counts": {
+          "normal": 1124,
+          "synthetic_behavior_deviation": 37,
+          "synthetic_combined_pattern": 27,
+          "synthetic_high_amount": 117,
+          "synthetic_rapid_repeat": 89,
+          "synthetic_unusual_time": 87
+        },
+        "metrics": {
+          "accuracy": 0.868332,
+          "classes": [
+            "normal",
+            "synthetic_behavior_deviation",
+            "synthetic_combined_pattern",
+            "synthetic_high_amount",
+            "synthetic_rapid_repeat",
+            "synthetic_unusual_time"
+          ],
+          "confusion_matrix": [
+            [
+              1066,
+              38,
+              1,
+              18,
+              0,
+              1
+            ],
+            [
+              29,
+              7,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              14,
+              6,
+              0,
+              3
+            ],
+            [
+              34,
+              1,
+              4,
+              78,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              89,
+              0
+            ],
+            [
+              51,
+              2,
+              1,
+              1,
+              0,
+              32
+            ]
+          ],
+          "macro_f1": 0.651481,
+          "macro_precision": 0.730474,
+          "macro_recall": 0.615098,
+          "per_class": {
+            "normal": {
+              "f1": 0.924144,
+              "precision": 0.901099,
+              "recall": 0.948399,
+              "support": 1124
+            },
+            "synthetic_behavior_deviation": {
+              "f1": 0.162791,
+              "precision": 0.142857,
+              "recall": 0.189189,
+              "support": 37
+            },
+            "synthetic_combined_pattern": {
+              "f1": 0.595745,
+              "precision": 0.7,
+              "recall": 0.518519,
+              "support": 27
+            },
+            "synthetic_high_amount": {
+              "f1": 0.705882,
+              "precision": 0.75,
+              "recall": 0.666667,
+              "support": 117
+            },
+            "synthetic_rapid_repeat": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 89
+            },
+            "synthetic_unusual_time": {
+              "f1": 0.520325,
+              "precision": 0.888889,
+              "recall": 0.367816,
+              "support": 87
+            }
+          },
+          "weighted_f1": 0.86273
+        },
+        "row_count": 1481
+      }
+    },
+    "majority_class": {
+      "majority_label_from_train": "normal",
+      "test": {
+        "class_counts": {
+          "normal": 1132,
+          "synthetic_behavior_deviation": 36,
+          "synthetic_combined_pattern": 19,
+          "synthetic_high_amount": 114,
+          "synthetic_rapid_repeat": 52,
+          "synthetic_unusual_time": 105
+        },
+        "metrics": {
+          "accuracy": 0.776406,
+          "classes": [
+            "normal",
+            "synthetic_behavior_deviation",
+            "synthetic_combined_pattern",
+            "synthetic_high_amount",
+            "synthetic_rapid_repeat",
+            "synthetic_unusual_time"
+          ],
+          "confusion_matrix": [
+            [
+              1132,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              36,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              19,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              114,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              52,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              105,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "macro_f1": 0.145688,
+          "macro_precision": 0.129401,
+          "macro_recall": 0.166667,
+          "per_class": {
+            "normal": {
+              "f1": 0.874131,
+              "precision": 0.776406,
+              "recall": 1.0,
+              "support": 1132
+            },
+            "synthetic_behavior_deviation": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 36
+            },
+            "synthetic_combined_pattern": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 19
+            },
+            "synthetic_high_amount": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 114
+            },
+            "synthetic_rapid_repeat": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 52
+            },
+            "synthetic_unusual_time": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 105
+            }
+          },
+          "weighted_f1": 0.678681
+        },
+        "row_count": 1458
+      },
+      "validation": {
+        "class_counts": {
+          "normal": 1124,
+          "synthetic_behavior_deviation": 37,
+          "synthetic_combined_pattern": 27,
+          "synthetic_high_amount": 117,
+          "synthetic_rapid_repeat": 89,
+          "synthetic_unusual_time": 87
+        },
+        "metrics": {
+          "accuracy": 0.758947,
+          "classes": [
+            "normal",
+            "synthetic_behavior_deviation",
+            "synthetic_combined_pattern",
+            "synthetic_high_amount",
+            "synthetic_rapid_repeat",
+            "synthetic_unusual_time"
+          ],
+          "confusion_matrix": [
+            [
+              1124,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              37,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              27,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              117,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              89,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              87,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "macro_f1": 0.143826,
+          "macro_precision": 0.126491,
+          "macro_recall": 0.166667,
+          "per_class": {
+            "normal": {
+              "f1": 0.862956,
+              "precision": 0.758947,
+              "recall": 1.0,
+              "support": 1124
+            },
+            "synthetic_behavior_deviation": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 37
+            },
+            "synthetic_combined_pattern": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 27
+            },
+            "synthetic_high_amount": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 117
+            },
+            "synthetic_rapid_repeat": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 89
+            },
+            "synthetic_unusual_time": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 87
+            }
+          },
+          "weighted_f1": 0.654938
+        },
+        "row_count": 1481
+      }
+    }
+  },
+  "production_inference_created": false,
+  "random_seed": 20260912,
+  "real_fraud_detection": false,
+  "reproducibility": {
+    "command": "python -m ml.research_baseline",
+    "same_feature_files_and_configuration": "Produces equivalent predictions and metrics; creation timestamp varies per run."
+  },
+  "target": {
+    "classes": [
+      "normal",
+      "synthetic_behavior_deviation",
+      "synthetic_combined_pattern",
+      "synthetic_high_amount",
+      "synthetic_rapid_repeat",
+      "synthetic_unusual_time"
+    ],
+    "column": "target_scenario_label",
+    "notice": "Classification of intentionally generated synthetic scenarios, not detection of real fraud.",
+    "real_fraud": false,
+    "source_field": "scenario_label",
+    "type": "multiclass synthetic scenario target"
+  }
+}
